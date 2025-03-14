@@ -3,9 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tickets</title>
+    <title>Asian Ranked Bedwars</title>
+    <link rel="icon" href="https://media.discordapp.net/attachments/1274697560673488987/1349996753000206416/server-icon.png?ex=67d521f3&is=67d3d073&hm=ba1b8a33b66591a0603e2f1173d22e5dd5f1ddeb7909e1f72eaf69fada4a9628&=&format=webp&quality=lossless"> <!-- Change this to your logo URL -->
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff55ff, #5500aa);
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: white; /* Solid white title */
+        }
+
+        .copy-btn {
+            /*background: radial-gradient(70deg, #ff55ff, #5500aa);*/
+            color: #ff55ff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: transform 0.2s ease-in-out, opacity 0.2s;
+        }
+
+        .copy-btn:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        /* Notification Box */
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 1rem;
+            display: none;
+            animation: fadeInOut 3s ease-in-out;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateX(-50%) translateY(10px); }
+            10% { opacity: 1; transform: translateX(-50%) translateY(0); }
+            90% { opacity: 1; transform: translateX(-50%) translateY(0); }
+            100% { opacity: 0; transform: translateX(-50%) translateY(10px); }
+        }
+    </style>
 </head>
 <body>
-    
+
+    <h1>Asian Ranked Bedwars</h1>
+    <button class="copy-btn" onclick="copyIP()">Copy IP</button>
+
+    <div class="notification" id="notification">IP copied to clipboard: play.asianrbw.net</div>
+
+    <script>
+        function copyIP() {
+            const ip = "play.asianrbw.net"; // Change this to your server IP
+            navigator.clipboard.writeText(ip).then(() => {
+                let notification = document.getElementById("notification");
+                notification.style.display = "block";
+                setTimeout(() => {
+                    notification.style.display = "none";
+                }, 3000); // Hide after 3 seconds
+            }).catch(err => {
+                console.error("Failed to copy IP", err);
+            });
+        }
+    </script>
+
 </body>
 </html>
