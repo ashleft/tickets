@@ -22,7 +22,7 @@
 
         h1 {
             font-size: 2.5rem;
-            color: white; /* Solid white title */
+            color: white; 
         }
 
         .copy-btn {
@@ -73,13 +73,13 @@
 
     <script>
         function copyIP() {
-            const ip = "play.asianrbw.net"; // Change this to your server IP
+            const ip = "play.asrbw.com"; 
             navigator.clipboard.writeText(ip).then(() => {
                 let notification = document.getElementById("notification");
                 notification.style.display = "block";
                 setTimeout(() => {
                     notification.style.display = "none";
-                }, 3000); // Hide after 3 seconds
+                }, 3000); 
             }).catch(err => {
                 console.error("Failed to copy IP", err);
             });
